@@ -1,0 +1,38 @@
+<div class="empHierarchy">
+    <ul>
+        <li><a (click)="getDetails(OrganizationLead.id)"><div class="heirarchy-card">
+            <div class="user-image">
+              <img class="rounded-circle profile" src="https://i.imgur.com/CFpa3nK.jpg" width="50"/>
+            </div>
+            <div class="heirarchy-content">
+                <p>-----------------------------</p>
+                <p class="heir-details">{{OrganizationLead.orgName}} ({{OrganizationLead.id}})</p>
+                <p class="heir-details">{{OrganizationLead.owner}} ({{OrganizationLead.location}})</p>
+            </div>
+            </div></a></li>
+        <ul>
+            <li><a (click)="getDetails(currentOrganization.id)"><div class="heirarchy-card">
+                <div class="user-image">
+                  <img class="rounded-circle profile" src="https://i.imgur.com/CFpa3nK.jpg" width="50"/>
+                </div>
+                <div class="heirarchy-content">
+                    <p>-----------------------------</p>
+                    <p class="heir-details">{{OrganizationLead.orgName}} ({{OrganizationLead.id}})</p>
+                    <p class="heir-details">{{OrganizationLead.owner}} ({{OrganizationLead.location}})</p>
+                </div>
+                </div></a></li>
+        </ul>
+        <ul>
+            <li *ngFor=" let child of childrenOrganization"><a (click)="getDetails(child.id)"><div class="heirarchy-card">
+                <div class="user-image">
+                  <img class="rounded-circle profile" src="https://i.imgur.com/CFpa3nK.jpg" width="50"/>
+                </div>
+                <div class="heirarchy-content">
+                    <p>-----------------------------</p>
+                    <p class="heir-details">{{child.orgName}} ({{child.id}})</p>
+                    <p class="heir-details">{{child.owner}} ({{child.location}})</p>
+                </div>
+                </div></a></li>
+        </ul>
+    </ul>
+</div>

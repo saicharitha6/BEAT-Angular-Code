@@ -1,0 +1,47 @@
+<h3 class="title">Create Organization</h3>
+<div class="container ">
+    <div class="row">
+        <div class="col-md-6">
+            <form [formGroup]="orgForm" (ngSubmit)="onSubmit()">
+                <div class="mb-3">
+                    <label for="orgName" class="form-label">Organization Name</label><br>
+                    <input type="text" placeholder="Enter Organization Name" class="form-control" id="orgName"
+                        formControlName="orgName" [class.is-invalid]="orgName?.invalid && orgName?.touched">
+                    <small class="error" [class.d-none]="orgName?.valid || orgName?.untouched">organization name is a required
+                        field</small>
+                </div>
+                <div class="mb-3">
+                    <label for="location" class="form-label">Location</label><br>
+                    <input type="text" placeholder="Enter Location" class="form-control" id="location"
+                        formControlName="location" [class.is-invalid]="location?.invalid && location?.touched">
+                    <small class="error" [class.d-none]="location?.valid || location?.untouched">location is a required
+                        field</small>
+                </div>
+                <div class="mb-3">
+                    <label for="owner" class="form-label">Owner</label><br>
+                    <input type="text" placeholder="Enter Owner Name" class="form-control" id="owner"
+                        formControlName="owner" [class.is-invalid]="owner?.invalid && owner?.touched">
+                    <small class="error" [class.d-none]="owner?.valid || owner?.untouched">owner is a required
+                        field</small>
+                </div>
+                <div class="mb-3">
+                    <label for="ownerEmpId" class="form-label">Owner Employee Id</label><br>
+                    <input type="text" placeholder="Enter Owner Employee Id" class="form-control" id="ownerEmpId"
+                        formControlName="ownerEmpId" [class.is-invalid]="ownerEmpId?.invalid && ownerEmpId?.touched">
+                    <small class="error" [class.d-none]="ownerEmpId?.valid || ownerEmpId?.untouched">owner Employee Id is a
+                        required field</small>
+                </div>
+                <div class="mb-3">
+                    <label for="parentOrg" class="form-label">Parent Organization</label><br>
+                    <input type="number" placeholder="Enter Parent Organization" class="form-control" id="parentOrg"
+                        formControlName="parentOrg" [class.is-invalid]="parentOrg?.invalid && parentOrg?.touched">
+                    <small class="error" [class.d-none]="parentOrg?.valid || parentOrg?.untouched">parent Organization is a
+                        required</small>
+                </div>
+                <div class="mb-3">
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

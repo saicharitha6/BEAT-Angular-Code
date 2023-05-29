@@ -1,0 +1,30 @@
+button {
+    margin-left: 20rem;
+}
+.container{
+    margin-left: auto;
+    margin-top: 80px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    border-radius: 20px;
+    border: 0.2px solid rgb(209, 209, 209);
+    box-shadow: 2px 2px 1px 2px rgb(200,200,200);
+    background-color: rgba(200,200,200, 0.1);
+    text-align:left;
+    width:50rem;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+label{
+    text-decoration: solid;
+    margin-left: 5px;
+}
+h3{
+  text-align: center;
+  
+}
+input{
+    width:45rem;
+}

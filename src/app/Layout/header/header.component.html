@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <div class="header d-flex flex-row justify-content-between" id="header" *ngIf="router.url !=='/login'">
+
+    <div class="logo" layout="row">
+      <img class="logo" src="../../assets/images/accolite logo.png" routerLink="/homepage">
+    </div>
+    <div class="header_search-bar d-flex flex-column">
+      <div class="input-group search-bar form-outline">
+        <input type="search" id="form1" class="form-control search-bar--input" [(ngModel)]="searchText"
+          placeholder="Search Employee By Name" (keypress)="onSearchText()"/>
+        <label class="form-label" for="form1"></label>
+      </div>
+      <div class="employeeList" id="employeeList">
+        <div id="employees" class="employeeButtons" *ngFor="let employee of employees | filter : searchText" >
+        
+          <button (click)="toProfile(employee.id)" *ngIf="searchText!=''" (click)="clickthis()">
+            {{employee.name}} ({{employee.id}}) , {{employee.designation}}, {{employee.orgName}} 
+           
+          </button>
+        </div>
+  
+      </div>
+    </div>
+    <div class="accessibility-options d-flex flex-row " id="accessibility-options">
+      <div class="dropdown">
+        <button class="btn dropdown-toggle emp-btn" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown"
+          aria-expanded="true">
+          Employee
+        </button>
+        <ul class="dropdown-menu " aria-labelledby="dropdownMenuButton1">
+          <li><a class="dropdown-item" routerLink="/employee/create">Create</a></li>
+        </ul>
+      </div>
+      <div class="dropdown">
+        <button class="btn  dropdown-toggle org-btn" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown"
+          aria-expanded="true">
+          Organization
+        </button>
+        <ul class="dropdown-menu " aria-labelledby="dropdownMenuButton1">
+          <li><a class="dropdown-item" routerLink="/createOrganization">Create</a></li>
+          <li><a class="dropdown-item" routerLink="/organizations">View</a></li>
+        </ul>
+      </div>
+      <div class="dropdown">
+        <button class="btn  dropdown-toggle project-btn" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown"
+          aria-expanded="true">
+          Project
+        </button>
+        <ul class="dropdown-menu " aria-labelledby="dropdownMenuButton1">
+          <li><a class="dropdown-item" routerLink="/createProject">Create</a></li>
+          <li><a class="dropdown-item" routerLink="/projects">View</a></li>
+        </ul>
+      </div>
+  
+    </div>
+    <div class="profile-display">
+  
+      <img class="rounded-circle profile" src="https://i.imgur.com/CFpa3nK.jpg" width="50" (click)="getDetails()" />
+      <ul class="profile_list" id="profile_list">
+        <li class="data" (click)="showProfile()"><i class="fa-regular fa-user"></i><div >My Profile</div></li>
+        <li  class="data" (click)="logOut()" ><i class="fa-solid fa-right-from-bracket"></i><div>LogOut</div></li>
+      </ul>
+    </div>
+  </div> 
+</body>
+</html>
+
+<!-- <hr class="horizontalRule"> -->
+
+

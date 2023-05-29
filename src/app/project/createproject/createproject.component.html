@@ -1,0 +1,80 @@
+<div class="container mb-4">
+    <form [formGroup]="profileForm" (ngSubmit)="onSubmit()">
+        <div class="row">
+            <div class="col-md-4 mb-3">
+                <label for="name" class="form-label">Project Name</label>
+                <input type="text" class="form-control" id="name" formControlName="name"
+                    [class.is-invalid]="name?.invalid && name?.touched">
+                <small class="error" [class.d-none]="name?.valid || name?.untouched"> project Name is a required
+                    field</small>
+            </div>
+            <div class="col-md-4 mb-3">
+                <label for="organization" class="form-label">Organization Name</label>
+                  <input type="text" class="form-control" id="organizationName" placeholder=""
+                    formControlName="organization" [class.is-invalid]="organization?.invalid && organization?.touched">
+                    <small class="error" [class.d-none]="organization?.valid || organization?.untouched">organization Name
+                        is a required field</small>
+            </div>
+            <div class="col-md-4 mb-3">
+                <label for="projectManager" class="form-label">Project Manager</label>
+                <input type="text" class="form-control" id="projectManager" placeholder=""
+                    formControlName="projectManager"
+                    [class.is-invalid]="projectManager?.invalid && projectManager?.touched">
+                    <small class="error" [class.d-none]="projectManager?.valid || projectManager?.untouched">project Manager
+                        is
+                        a required field</small>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-4 mb-3">
+                <label for="startDate" class="form-label">Start Date</label>
+                <input type="date" class="form-control" id="startDate" placeholder="" formControlName="startDate"
+                    [class.is-invalid]="startDate?.invalid && startDate?.touched">
+                    <small class="error" [class.d-none]="startDate?.valid || startDate?.untouched">startDate is a required
+                        field</small>
+            </div>
+            <div class="col-md-4 mb-3">
+                <label for="location" class="form-label">Location</label>
+                <input type="text" class="form-control" id="location" placeholder="" formControlName="location"
+                    [class.is-invalid]="location?.invalid && location?.touched">
+                    <small class="error" [class.d-none]="location?.valid || location?.untouched">location is a
+                        required</small>
+            </div>
+            <div class="col-md-4 mb-3">
+                <label for="endDate" class="form-label">End Date</label>
+                <input type="date" class="form-control" id="endDate" placeholder="" formControlName="endDate"
+                    [class.is-invalid]="endDate?.invalid && endDate?.touched">
+                <small class="error" [class.d-none]="endDate?.valid || startDate?.untouched">endDate is a
+                    required</small>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-4 mb-3">
+                <label for="description" class="form-label">Description</label>
+                <input type="text" class="form-control" id="description" placeholder="" formControlName="description"
+                    [class.is-invalid]="description?.invalid && description?.touched">
+                <small class="error" [class.d-none]="description?.valid || startDate?.untouched">Description is a
+                    required</small>
+            </div>
+            <div class="col-md-4 mb-3">
+                <label for="projectType" class="form-label">Project Type</label>
+                <input type="text" class="form-control" id="description" placeholder="" formControlName="projectType"
+                    [class.is-invalid]="projectType?.invalid && projectType?.touched">
+                <small class="error" [class.d-none]="projectType?.valid || projectType?.untouched">projectType is a
+                    required</small>
+            </div>
+            <div class="col-md-4 mb-3">
+                <label for="editorId" class="form-label">Editor Id</label>
+                <input type="number" class="form-control" id="location" placeholder="" formControlName="editorId"
+                    [class.is-invalid]="editorId?.invalid && editorId?.touched">
+                <small class="error" [class.d-none]="editorId?.valid || editorId?.untouched">editorId is a required
+                    field</small>
+            </div>
+        </div>
+        <div class="mb-3">
+            <button type="submit" [disabled]="profileForm.invalid" class="btn btn-primary">Submit</button>
+        </div>
+    </form>
+</div>
+<div style="min-height: 50px;">
+</div>

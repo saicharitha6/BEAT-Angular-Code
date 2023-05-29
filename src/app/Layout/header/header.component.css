@@ -1,0 +1,90 @@
+.logo{
+    width:180px
+}
+
+.header{
+    text-align: center;
+    align-items: center;
+    padding: 1.1rem;
+    background-Color :#d3d3d35e;
+}
+
+.header_search-bar{
+    width:40rem;
+    border-radius: 1.2rem;
+}
+
+.search-bar--input{
+    border-radius: 0.32rem;
+}
+
+.employeeButtons> *{
+    border: 0;
+    border-bottom: 0.1rem solid #ccc;
+    background-color: whitesmoke;
+    width: 40rem;
+    z-index: 123;
+    position: relative;
+}
+
+.logo:hover{
+cursor: pointer;
+}
+
+
+.accessibility-options{
+   gap: 0.9rem
+}
+
+.emp-btn,.org-btn,.project-btn{
+    width:13rem;
+    border: 0.01rem solid #8080805c;
+}
+
+.employeeList{
+    display: none;
+    position: absolute;
+    z-index: 1;
+    border:1px solid grey;
+    top:9%;
+}
+
+
+.horizontalRule{
+    margin-top: 0;
+    border-top:1px solid black
+}
+
+
+/* .profile_action .profile_list::before{
+    content: '';
+    position: absolute;
+    top:-5px;
+    right:28px;
+    width:20px;
+    height:20px;
+    background: #fff;
+    transform: rotate(45deg);
+
+} */
+
+.profile_list{
+    position:absolute;
+    list-style: none;
+    padding:0;
+    margin-top: 0.8rem;
+    background-color: whitesmoke;
+    box-sizing: 0 5px 25px rgba(0,0,0,0.1);
+    transition: 0.5s;
+    display: none;
+    z-index:1;
+    right:3px;
+}
+
+.data{
+    padding:0.8rem;
+    display: flex;
+    gap:1rem;
+    align-items: center;
+   cursor:pointer
+}

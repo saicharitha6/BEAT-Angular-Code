@@ -1,0 +1,11 @@
+.space{
+    min-height: 10px;
+}
+#cssTable td
+{
+    text-align: center;
+    vertical-align: middle;
+}
+.project_list{
+    margin-top: 5rem;
+}

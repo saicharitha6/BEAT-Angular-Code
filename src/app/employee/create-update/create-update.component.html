@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <h3 class="mb-3 title">Create Employee</h3>
+<div class="container mt-5">
+  <form [formGroup]="empForm" (ngSubmit)="onSubmit()">
+    <div class="row">
+      <div class="col-md-4 mb-3">
+        <label for="name" class="form-label">Name</label>
+        <input type="text" class="form-control" id="name" formControlName="name" placeholder="Enter Employee Name"
+          [class.is-invalid]="name?.invalid && name?.touched">
+        <small class="error" [class.d-none]="name?.valid || name?.untouched">name is a required field</small>
+      </div>
+      <div class="col-md-4 mb-3">
+        <label for="location" class="form-label">Location</label>
+        <input type="text" class="form-control" id="location" placeholder="Enter Location" formControlName="location"
+          [class.is-invalid]="location?.invalid && location?.touched">
+        <small class="error" [class.d-none]="location?.valid || location?.untouched">location is a required
+          field</small>
+      </div>
+      <div class="col-md-4 mb-3">
+        <label for="gender" class="form-label">Gender</label>
+        <input type="text" class="form-control" id="gender" placeholder="Enter Gender" formControlName="gender"
+          [class.is-invalid]="gender?.invalid && gender?.touched">
+        <small class="error" [class.d-none]="gender?.valid || gender?.untouched">gender is a required field</small>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-4 mb-3">
+        <label for="dateOfJoining" class="form-label">Date Of Joining</label>
+        <input type="date" class="form-control" id="dateOfJoining" placeholder="" formControlName="dateOfJoining"
+          [class.is-invalid]="dateOfJoining?.invalid && dateOfJoining?.touched">
+        <small class="error" [class.d-none]="dateOfJoining?.valid || dateOfJoining?.untouched">DOJ is a required field</small>
+      </div>
+      <div class="col-md-4 mb-3">
+        <label for="designation" class="form-label">Designation</label>
+        <input type="text" class="form-control" id="designation" placeholder="Enter Designation" formControlName="designation"
+          [class.is-invalid]="designation?.invalid && designation?.touched">
+        <small class="error" [class.d-none]="designation?.valid || designation?.untouched">Designation is a required
+          field</small>
+      </div>
+      <div class="col-md-4 mb-3">
+        <label for="category" class="form-label">Category</label>
+        <input type="text" class="form-control" id="category" placeholder="Enter Category" formControlName="category"
+          [class.is-invalid]="category?.invalid && category?.touched">
+        <small class="error" [class.d-none]="category?.valid || category?.untouched">category is a required
+          field</small>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-4 mb-3">
+        <label for="projectId" class="form-label">Project Id</label>
+        <input type="text" class="form-control" id="projectId" placeholder="Enter Project Id" formControlName="projectId">
+      </div>
+      <div class="col-md-4 mb-3">
+        <label for="leadId" class="form-label">Lead Id</label><br>
+        <input type="text" class="form-control" id="leadId" placeholder="Enter Lead Id" formControlName="leadId">
+        <small class="error" [class.d-none]="leadId?.valid || leadId?.untouched">Lead is a required
+          field.</small>
+      </div>
+      <div class="col-md-4 mb-3">
+        <label for="organizationId" class="form-label">Organization Id</label>
+        <input type="text" class="form-control" id="organizationId" placeholder="Enter Organization Id" formControlName="organizationId">
+        <small class="error" [class.d-none]="organizationId?.valid || organizationId?.untouched">organization Id is a
+          required.</small>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-4 mb-3">
+        <label for="clientCounterpartId" class="form-label">Client Counter Part Id</label>
+        <input type="text" class="form-control" id="clientCounterpartId" placeholder="Enter Counter Part Id"
+          formControlName="clientCounterpartId">
+        <small class="error"
+          [class.d-none]="clientCounterpartId?.valid || clientCounterpartId?.untouched">clientCounterpart Id is a
+          required.</small>
+      </div>
+      <div class="col-md-4 mb-3">
+        <label for="band" class="form-label">Band</label>
+        <input type="text" class="form-control" id="band" placeholder="Enter Band Id" formControlName="band"
+          [class.is-invalid]="band?.invalid && band?.touched">
+        <small class="error" [class.d-none]="band?.valid || band?.untouched">band is a required.</small>
+      </div>
+    </div><br>
+    <div >
+      <button class="mb-3" type="submit" class="btn btn-primary">Submit</button>
+    </div>
+  </form>
+</div>
+</body>
+</html>

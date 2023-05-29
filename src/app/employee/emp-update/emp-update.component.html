@@ -1,0 +1,66 @@
+<h3>Update Employee Form</h3>
+<div class="container">
+  <form [formGroup]="empForm" (ngSubmit)="onSubmit()">
+    <div class="row">
+      <div class="col-md-4 mb-3">
+        <label for="id" class="form-label">Employee ID</label>
+        <input type="number" class="form-control" id="id" value="{{emp.id}}" formControlName="id">
+      </div>
+      <div class="col-md-4 mb-3">
+        <label for="name" class="form-label">Name</label>
+        <input type="text" class="form-control" id="name" formControlName="name" value="{{emp.name}}">
+      </div>
+      <div class="col-md-4 mb-3">
+        <label for="location" class="form-label">Location</label>
+        <input type="text" class="form-control" id="location" value="{{emp.location}}" formControlName="location">
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-4 mb-3">
+        <label for="gender" class="form-label">Gender</label>
+        <input type="text" class="form-control" id="gender" value="{{emp.gender}}" formControlName="gender">
+      </div>
+      <!-- <div class="col-md-4 mb-3">
+        <label for="dateOfJoining" class="form-label">Date Of Joining</label>
+        <input type="date" class="form-control" id="dateOfJoining" value="{{emp.dateOfJoining}}" formControlName="dateOfJoining ">
+      </div> -->
+      <div class="col-md-4 mb-3">
+        <label for="designation" class="form-label">Designation</label>
+        <input type="text" class="form-control" id="designation" value="{{emp.designation}}"
+          formControlName="designation">
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-4 mb-3">
+        <label for="category" class="form-label">Category</label>
+        <input type="text" class="form-control" id="category" value="{{emp.category}}" formControlName="category">
+      </div>
+      <div class="col-md-4 mb-3">
+        <label for="projectId" class="form-label">Project Id</label>
+        <input type="text" class="form-control" id="projectId" value="{{emp.projectId}}" formControlName="projectId">
+      </div>
+      <div class="col-md-4 mb-3">
+        <label for="leadId" class="form-label">Lead Id</label><br>
+        <input type="text" class="form-control" id="leadId" value="{{emp.leadId}}" formControlName="leadId">
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-4 mb-3">
+        <label for="organizationId" class="form-label">Organization Id</label>
+        <input type="text" class="form-control" id="organizationId" value="{{emp.organizationId}}"
+          formControlName="organizationId">
+      </div>
+      <div class="col-md-4 mb-3">
+        <label for="clientCounterpartId" class="form-label">Client Counter Part Id</label>
+        <input type="text" class="form-control" id="clientCounterpartId" value="{{emp.clientCounterpartId}}"
+          formControlName="clientCounterpartId">
+      </div>
+      <div class="col-md-4 mb-3">
+        <label for="band" class="form-label">Band</label>
+        <input type="text" class="form-control" id="band" value="{{emp.band}}" formControlName="band">
+      </div>
+    </div>
+    <button class="mb-3" type="submit" class="btn btn-primary">Submit</button>
+  </form>
+  
+</div>

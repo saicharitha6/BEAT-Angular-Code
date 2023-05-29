@@ -1,0 +1,149 @@
+<router-outlet></router-outlet>
+<div class=" container py-5 profile-container" id="profile-container">
+  <div class="row">
+    <div class="col-lg-4">
+      <div class="card mb-4 profile-desc">
+        <div class="card-body text-center profile-card">
+          <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-chat/ava3.webp" alt="avatar"
+            class="rounded-circle img-fluid" style="width: 150px;">
+          <h5 class="my-3">{{profile.name}}</h5>
+          <p class="text-muted mb-1">{{profile.designation}}</p>
+          <p class="text-muted mb-2">{{profile.id}}</p>
+          <!-- <hr> -->
+          <div class="d-flex justify-content-center mb-2 profile_settings">
+
+            <button type="button" *ngIf="getUpdateChar==='1'" (click)="UpdateEmp(profile.id)"
+              class="btn btn-primary">Update Profile</button>
+            <button type="button" class="btn btn-primary" (click)="getHistoryDetails()">Check
+              History</button>
+            <button *ngIf="disableEmp==='1'" type="button" class="btn btn-primary"
+              (click)="DisableEmployee()">Terminate</button>
+          </div>
+        </div>
+      </div>
+
+    </div>
+    <div class="col-lg-8">
+      <div class="card mb-4 profile-detail">
+        <div class="card-body">
+          <div class="row">
+            <div class="col-sm-3">
+              <p class="mb-0">Employee ID</p>
+              <p class="text-muted mb-0">{{profile.id}}</p>
+            </div>
+            <div class="col-sm-3">
+              <p class="mb-0">Gender</p>
+              <p class="text-muted mb-0">{{profile.gender}}</p>
+            </div>
+            <div class="col-sm-3">
+              <p class="mb-0">Designation</p>
+              <p class="text-muted mb-0">{{profile.designation}}</p>
+            </div>
+            <div class="col-sm-3">
+              <p class="mb-0">Organization</p>
+              <p class="text-muted mb-0">{{profile.organizationIdName}}</p>
+            </div>
+          </div>
+          <hr>
+          <div class="row">
+            <div class="col-sm-3">
+              <p class="mb-0">Name</p>
+              <p class="text-muted mb-0">{{profile.name}}</p>
+            </div>
+            <div class="col-sm-3">
+              <p class="mb-0">Category</p>
+              <p class="text-muted mb-0">{{profile.category}}</p>
+            </div>
+            <div class="col-sm-3">
+              <p class="mb-0">Project</p>
+              <p class="text-muted mb-0">{{profile.projectIdName}}</p>
+            </div>
+            <div class="col-sm-3">
+              <p class="mb-0">Band</p>
+              <p class="text-muted mb-0">{{profile.bandName}}</p>
+            </div>
+          </div>
+          <hr>
+          <div class="row">
+            <div class="col-sm-3">
+              <p class="mb-0">Current Office Location</p>
+              <p class="text-muted mb-0">{{profile.location}}</p>
+            </div>
+            <div class="col-sm-3">
+              <p class="mb-0">Date Of Joining</p>
+              <p class="text-muted mb-0">{{profile.dateOfJoining | date: 'yyyy-mm-dd'}}</p>
+            </div>
+            <div *ngIf="profile.dateOfLeaving!=null" class="col-sm-3">
+              <p class="mb-0">Date Of Leaving</p>
+              <p class="text-muted mb-0">{{profile.dateOfLeaving | date: 'yyyy-mm-dd'}}</p>
+            </div>
+            <div class="col-sm-3">
+              <p class="mb-0">Client Counter Part </p>
+              <p class="text-muted mb-0">{{profile.clientCounterpartIdName}}</p>
+            </div>
+          </div>
+          <hr>
+          <div class="row">
+          </div>
+          <div class="col-sm-3">
+            <p class="mb-0">Lead</p>
+            <p class="text-muted mb-0">{{profile.leadIdName}}</p>
+          </div>
+          <div class="col-sm-3">
+            <p class="mb-0">Email</p>
+            <p class="text-muted mb-0">{{profile.email}}</p>
+          </div>
+          <hr>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="card skills card-body">
+    <div class="empHierarchy">
+      <ul>
+        <li><a (click)="getDetails(employeeLead.id)">
+            <div class="heirarchy-card">
+              <div class="user-image">
+                <img class="rounded-circle profile" src="https://i.imgur.com/CFpa3nK.jpg" width="50" />
+              </div>
+              <div class="heirarchy-content">
+                <p>-----------------------------</p>
+                <p class="heir-details">{{employeeLead.name}} ({{employeeLead.id}})</p>
+                <p class="heir-details">{{employeeLead.designation}} ({{employeeLead.orgName}})</p>
+                <p class="heir-details"></p>
+              </div>
+            </div>
+          </a></li>
+        <ul>
+          <li><a (click)="getDetails(currentEmployee.id)">
+              <div class="heirarchy-card">
+                <div class="user-image">
+                  <img class="rounded-circle profile" src="https://i.imgur.com/CFpa3nK.jpg" width="50" />
+                </div>
+                <div class="heirarchy-content">
+                  <p>-----------------------------</p>
+                  <p class="heir-details">{{currentEmployee.name}} ({{currentEmployee.id}})</p>
+                  <p class="heir-details">{{currentEmployee.designation}} ({{currentEmployee.orgName}})</p>
+                  <p class="heir-details"></p>
+                </div>
+              </div>
+            </a></li>
+        </ul>
+        <ul>
+          <li *ngFor=" let child of childrenEmployee"><a (click)="getDetails(child.id)">
+              <div class="heirarchy-card">
+                <div class="user-image">
+                  <img class="rounded-circle profile" src="https://i.imgur.com/CFpa3nK.jpg" width="50" />
+                </div>
+                <div class="heirarchy-content">
+                  <p>-----------------------------</p>
+                  <p class="heir-details">{{child.name}} ({{child.id}})</p>
+                  <p class="heir-details">{{child.designation}} ({{child.orgName}})</p>
+                </div>
+              </div>
+            </a></li>
+        </ul>
+      </ul>
+    </div>
+
+  </div>

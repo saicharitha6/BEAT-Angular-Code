@@ -1,0 +1,54 @@
+<h3>Project Updation</h3>
+<div class="container mb-4">
+    <form [formGroup]="profileForm" (ngSubmit)="onSubmit()">
+        <div class="row">
+            <div class="col-md-4 mb-3">
+                <label for="name" class="form-label">Project Name</label>
+                <input type="text" class="form-control" id="name" formControlName="name">
+            </div>
+            <div class="col-md-4 mb-3">
+                <label for="organization" class="form-label">Organization Name</label>
+                <input type="text" class="form-control" id="organizationName" placeholder=""
+                    formControlName="organization" >
+            </div>
+            <div class="col-md-4 mb-3">
+                <label for="projectManager" class="form-label">Project Manager</label>
+                <input type="text" class="form-control" id="projectManager" placeholder=""
+                    formControlName="projectManager">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-4 mb-3">
+                <label for="startDate" class="form-label">Start Date</label>
+                <input type="date" class="form-control" id="startDate" placeholder="" formControlName="startDate">
+            </div>
+            <div class="col-md-4 mb-3">
+                <label for="location" class="form-label">Location</label>
+                <input type="text" class="form-control" id="location" placeholder="" formControlName="location">
+            </div>
+            <div class="col-md-4 mb-3">
+                <label for="endDate" class="form-label">End Date</label>
+                <input type="date" class="form-control" id="endDate" placeholder="" formControlName="endDate">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-4 mb-3">
+                <label for="description" class="form-label">Description</label>
+                <input type="text" class="form-control" id="description" placeholder="" formControlName="description">
+            </div>
+            <div class="col-md-4 mb-3">
+                <label for="projectType" class="form-label">Project Type</label>
+                <input type="text" class="form-control" id="description" placeholder="" formControlName="projectType">
+            </div>
+            <div class="col-md-4 mb-3">
+                <label for="editorId" class="form-label">Editor Id</label>
+                <input type="number" class="form-control" id="location" placeholder="" formControlName="editorId">
+            </div>
+        </div>
+        <div class="mb-3">
+            <button type="submit" [disabled]="profileForm.invalid" class="btn btn-primary">Submit</button>
+        </div>
+    </form>
+</div>
+<div style="min-height: 50px;">
+</div>

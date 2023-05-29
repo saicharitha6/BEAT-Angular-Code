@@ -1,0 +1,147 @@
+.profile-detail,.profile-desc, .skills{
+    height:100%;
+}
+
+section{
+    height: 100vh;
+}
+
+.card_skill{
+    height: 0%;
+    width: 50rem;
+    padding: auto;
+    max-width: 20px;
+    
+}
+
+.skills{
+    margin-top: 4rem;
+}
+
+.profile_settings{
+    gap: 0.5rem;
+    margin-top: 1rem;
+}
+
+.profile-card{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap:0.5rem
+}
+
+
+    
+    .empHierarchy{
+        width: 100%;
+        height: auto;
+        text-align :center;
+    }
+    
+    .empHierarchy ul{
+        padding-top:  20px;
+        position: relative;
+        transition: 0.5s;
+    }
+    
+    .empHierarchy li{
+        display: inline-table;
+        text-align: center;
+        list-style-type: none;
+        position: relative;
+        padding: 10px;
+        transition: 0.5s;
+    }
+    
+    .empHierarchy li::before , .empHierarchy li::after{
+        content: '';
+        position: absolute;
+        top :0;
+        right: 50%;
+        border-top: 1px solid #ccc;
+        width: 51%;
+        height: 10px;
+    }
+    
+    .empHierarchy li::after{
+        right : auto;
+        left: 50%;
+        border-left: 1px solid #ccc;
+    }
+    
+    .empHierarchy li:only-child:after, .empHierarchy li:only-child:before{
+    display: none;
+    }
+    
+    .empHierarchy li:only-child{
+        padding-top: 0;
+    }
+    
+    .empHierarchy li:first-child::before, .empHierarchy li:last-child::after{
+        border: 0 none;
+    }
+    
+    .empHierarchy li:last-child::before{
+        border-right: 1px solid #ccc;
+        border-radius: 5px 0px 0px 0px;
+    }
+    
+    .empHierarchy li:last-child::after{
+        border-radius: 5px 0px 0px 0px;
+    }
+    
+    .empHierarchy ul ul::before{
+        content: '';
+        position: absolute;
+        top:0;
+        left: 50%;
+        border-left: 1px solid #ccc;
+        width: 0;
+        height: 20px;
+    }
+    
+    .empHierarchy a{
+        border: 1px solid #ccc;
+        padding: 10px;
+        display: inline-grid;
+        border-radius: 5px;
+        text-decoration-line: none;
+        border-radius: 5px;
+        transition: 0.5s;
+    }
+    
+    .empHierarchy a img{
+        width: 50px;
+        height: 50px;
+        margin-bottom: 10px !important;
+        border-radius: 100px;
+        margin: auto;
+    }
+    
+    .empHierarchy a span{
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        color: #666;
+        padding: 8px;
+        font-size: 12px;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        font-weight: 500;
+    }
+    
+    /*Hover Section*/
+    
+    .empHierarchy li a:hover, .empHierarchy li a:hover span, .empHierarchy li a:hover+ul li a{
+    
+        background: #c8e4f8;
+        color: #000;
+        border: 1px solid #94a0b4;
+        box-shadow: 0px 0px 8px -5px #5f5f5f ;
+    }
+    
+    .empHierarchy li a:hover+ul li::after, .empHierarchy li a:hover+ul ul::before{
+    
+    border-color: #94a0b4;
+    
+    }
